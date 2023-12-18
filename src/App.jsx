@@ -1,0 +1,23 @@
+import './App.css'
+import userImg from './assets/images/20231021_120024_0000-removebg-preview.png';
+
+function App() {
+
+  return (
+    <div className='bg-gradient-to-r from-indigo-100'>
+      <div className="container mx-auto flex items-center justify-between">
+        <div className="w-1/2">
+          <h1 className="text-zinc-900 text-[70px] font-extrabold font-['Manrope'] leading-[80px]">One Step <br /> Closer To Your <br /> <span className='text-indigo-400'>Dream Job</span></h1>
+          <p className="text-neutral-500 text-lg font-medium font-['Manrope'] leading-[30px] mt-4">Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
+          <button className="px-7 py-[15px] bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg justify-start items-start gap-2.5 inline-flex text-white text-xl font-extrabold font-['Manrope'] mt-5">Get Started</button>
+        </div>
+        <div className="w-1/2 flex items-center justify-between">
+          <div className='w-1/4'></div>
+          <img className='w-3/4 drop-shadow-2xl' src={userImg} alt="" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
