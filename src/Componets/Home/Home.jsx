@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 
 const Home = () => {
     return (
-        <main>
+        <main className="px-3 md:px-0">
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
