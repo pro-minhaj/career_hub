@@ -16,7 +16,9 @@ const Featured = () => {
             <p className="text-center text-neutral-500 text-base font-medium font-['Manrope'] leading-relaxed">Explore thousands of job opportunities with all the information you need. Its your future</p>
             <div className="grid md:grid-cols-2 gap-[24px] py-10">
                 {
-                    jobs.map(job => <FeacturedJobItem key={job.id} job={job}></FeacturedJobItem>)
+                    jobs.map(job => <FeacturedJobItem 
+                        key={job.id} job={job}
+                    ></FeacturedJobItem>)
                 }
             </div>
             <div className="text-center">
