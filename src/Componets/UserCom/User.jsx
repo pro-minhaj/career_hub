@@ -13,7 +13,7 @@ const Users = () => {
                 </div>
                 <div className="w-full md:w-1/2 flex items-center justify-between -z-10 md:z-0">
                     <div></div>
-                    <img className='w-full md:w-[90%] drop-shadow-2xl' src={userImg} alt="" />
+                    <img className='w-full drop-shadow-2xl' src={userImg} alt="" />
                 </div>
             </div>
         </div>

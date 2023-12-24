@@ -8,9 +8,9 @@ const Header = () => {
     return (
         <header className='bg-gradient-to-r from-indigo-100 py-5 md:py-8 rounded-md px-3 md:px-0 sticky top-0 md:static'>
             <div className="flex items-center justify-between container mx-auto relative">
-                <div>
+                <Link to="/">
                     <img src={Logo} alt="" />
-                </div>
+                </Link>
                 <button onClick={() => setOpen(!open)} className="md:hidden block text-4xl">
                     <i className="fa-solid fa-bars"></i>
                 </button>

@@ -5,9 +5,11 @@ import Phone from '../../assets/icons/phone.png';
 import Email from '../../assets/icons/email.png';
 import Location from '../../assets/icons/location2.png';
 import Hero_Section from '../Hero_Section/Hero_Section';
+import { useState } from 'react';
 
 const Job_Details = () => {
     const jobDetails = useLoaderData();
+    const [open, setOpen] = useState(true);
 
     const currentUrl = window.location.href;
     const url = currentUrl.split('/');
@@ -16,6 +18,10 @@ const Job_Details = () => {
     
     const {job_description, job_responsibility, educational_requirements, experiences, salary, job_title, contact_information} = findJob;
 
+    const applyBtn = event =>{
+        event.currentTarget.disabled = 'true';
+        setOpen(false);
+    }
     return (
         <div className="">
             <Hero_Section>
@@ -66,7 +72,7 @@ const Job_Details = () => {
                             <h4 className="text-zinc-700 text-xl font-bold font-['Manrope']">Address: <span className="text-neutral-500 text-xl font-medium font-['Manrope']">{contact_information.address}</span></h4>
                         </div>
                     </div>
-                    <button className="w-full py-[19px] mt-6 bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg text-white text-xl font-extrabold font-['Manrope']">Apply Now</button>
+                    <button onClick={applyBtn} className={`w-full py-[19px] mt-6 bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg text-white text-xl font-extrabold font-['Manrope'] ${!open ? 'opacity-50': ''}`}>Apply Now</button>
                 </div>
             </div>
         </div>
