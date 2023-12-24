@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Money from '../../assets/icons/money.png';
 import Calendar from '../../assets/icons/calendar.png';
 import Phone from '../../assets/icons/phone.png';
@@ -67,7 +67,9 @@ const Job_Details = () => {
                             <h4 className="text-zinc-700 text-xl font-bold font-['Manrope']">Address: <span className="text-neutral-500 text-xl font-medium font-['Manrope']">{contact_information.address}</span></h4>
                         </div>
                     </div>
-                    <button onClick={() => addToDb(findJob.id)} className={`w-full py-[19px] mt-6 bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg text-white text-xl font-extrabold font-['Manrope'] ${!open ? 'opacity-50': ''}`}>Apply Now</button>
+                    <Link to="/applied">
+                        <button onClick={() => addToDb(findJob.id)} className={`w-full py-[19px] mt-6 bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg text-white text-xl font-extrabold font-['Manrope'] ${!open ? 'opacity-50': ''}`}>Apply Now</button>
+                    </Link>
                 </div>
             </div>
         </div>

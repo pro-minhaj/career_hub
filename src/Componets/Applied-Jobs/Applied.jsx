@@ -1,37 +1,36 @@
-import { useEffect, useState } from "react";
 import { getShoppingCart } from "../../utilities/fakedb";
 import Hero_Section from "../Hero_Section/Hero_Section";
 import Applied_Job from "./Applied_Job/Applied_Job";
+import { useLoaderData } from "react-router-dom";
 
 const Applied = () => {
-    const [jobs, setJobs] = useState([]);
+    const jobsData = useLoaderData(); 
     const getJobApplied = getShoppingCart();
 
-    useEffect(() => {
-        fetch('/jobs.json')
-        .then(res => res.json())
-        .then(data => setJobs(data))
-    }, []);
-    
-    const getId = Object.values(getJobApplied);
     const findJob = [];
-    if(!getId){
-        for(const findId of getId){
-            const getJobData = jobs.find(job => job.id === findId);
-            findJob.push(getJobData)
-        }
+    for(const getIds in getJobApplied){
+        const getJobData = jobsData.find(job => job.id == getIds);
+        findJob.push(getJobData)
     }
+
     console.log(findJob);
     return (
         <div>
             <Hero_Section>Applied Jobs</Hero_Section>
-            <div>
-                <div>
-                    <p>Filter By</p>
+            <div className="container mx-auto py-[100px]">
+                <div className="pb-[32px] text-end">
+                    <select className="outline-none bg-zinc-100 p-2 rounded-lg text-zinc-700 text-xl font-semibold font-['Manrope']"> 
+                        <option selected>Filter By</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Onsite">Onsite</option>
+                    </select>
                 </div>
-                <div>
+                <div className="flex flex-col gap-[24px]">
                     {
-                        findJob.map(job => <Applied_Job key={job.id}></Applied_Job>)
+                        findJob.map(job => <Applied_Job 
+                            key={job.id}
+                            job={job}
+                        ></Applied_Job>)
                     }
                 </div>
             </div>
