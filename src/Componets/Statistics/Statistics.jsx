@@ -1,4 +1,3 @@
-import React from 'react';
 import { PureComponent } from 'react';
 import {
   LineChart,
@@ -7,7 +6,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   Brush,
   AreaChart,
   Area,

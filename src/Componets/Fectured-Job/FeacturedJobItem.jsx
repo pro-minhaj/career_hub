@@ -4,8 +4,10 @@ import Location from '../../assets/icons/Location.png';
 const FeacturedJobItem = ({job}) => {
     const {logo, job_title, company_name, remote_or_onsite, job_type, location, salary, id} = job;
     return (
-        <div className="rounded-lg border border-gray-200 p-[40px]">
-            <img src={logo} alt="" />
+        <div className="rounded-lg border border-gray-200 p-[40px] flex flex-col items-center md:items-start">
+            <div>
+                <img src={logo} alt="" />
+            </div>
             <h2 className="text-zinc-700 text-2xl font-extrabold font-['Manrope'] mt-[25px] mb-[8px]">{job_title}</h2>
             <h4 className="text-neutral-500 text-xl font-semibold font-['Manrope']">{company_name}</h4>
             <div className="flex gap-4 py-[16px]">
