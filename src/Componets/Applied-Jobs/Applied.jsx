@@ -13,7 +13,6 @@ const Applied = () => {
         findJob.push(getJobData)
     }
 
-    console.log(findJob);
     return (
         <div>
             <Hero_Section>Applied Jobs</Hero_Section>
